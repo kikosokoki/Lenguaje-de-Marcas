@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+     <script src="jquery-1.11.3.js"></script>
+
+</head>
+<body>
+    <div class="contenedor">
+        <div class="a"> 
+            <div id="a1" class="boton" style="cursor:pointer;"><p>Columna 1</p></div>
+            <div id="a2" class="cont"></div>
+        </div>
+        <div class="b"> 
+            <div id="b1" class="boton" style="cursor:pointer;"><p>Columna 2</p></div>
+            <div id="b2" class="cont">
+            
+                <div id="carrusel">
+          <h2 align="center">Bowie</h2>
+        <div id="cont_galeria">
+          <div>
+            <button id="retroceder"><<</button>
+          </div>
+          <div>
+            <img id="imagen" src="imagenes/bowie%203.jpg" />
+          </div>
+          <div>
+            <button id="avanzar">>></button>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="c"> 
+            <div id="c1" class="boton" style="cursor:pointer;"><p>Columna 3</p></p></div>
+            <div id="c2" class="cont"></div>
+        </div>
+        <div class="d" id="primero"> 
+            <div id="d1" class="boton" style="cursor:pointer;"><p>Columna 4</p></div>
+            <div id="d2" class="cont" id="prueba">
+                <div id="nina">
+                    <h1 align="center">Selecciona los diferentes colores</h1></br>
+                    <img align="center" src="nina.gif" id="nina" style="margin-left: 80px;">
+                </div>
+            
+            </div>
+        </div>
+            
+            
+    
+    </div>
+    
+    
+    
+
+      <script>
+  $(function() {
+    console.log("Ready for jquery");
+
+    $(".cont").hide();
+    $("#d2").show();
+    $(".boton").click(function() {
+      $(".cont").hide();
+      $(this).siblings().show();
+    });
+    $(function() {
+        x=0;
+        y=["imagenes/bowie%201.jpg","imagenes/bowie%202.jpg","imagenes/bowie%203.jpg","imagenes/bowie%204.jpg","imagenes/bowie%205.jpg"];
+
+
+        $("#avanzar").click(function(){
+            x=x+1
+            if (x==5){x=0};
+           $("#imagen").attr("src",y[x]);
+
+        });
+        $("#retroceder").click(function(){
+            x=x-1
+            if (x<0){x=4};
+            $("#imagen").attr("src",y[x])
+
+        });
+    });
+  });
+</script>
+
+    
+</body>
+</html>
